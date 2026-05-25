@@ -2,157 +2,217 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akshat Nahar | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Akshat Nahar | Portfolio - Feedback</title>
   <style>
+    /* Reset and Base Styles */
     * { 
       margin: 0; 
       padding: 0; 
       box-sizing: border-box; 
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; 
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent; /* Eliminates tap flash block artifacts on mobile devices */
     }
     
     body { 
-      background: url('index(1).jpeg') no-repeat center center fixed; 
+      background: #000000 url('index(1).jpeg') no-repeat center center fixed; 
       background-size: cover; 
       color: #ffffff; 
       line-height: 1.6; 
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* Universal Glass Container Backdrop */
+    .glass-panel {
+      background: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
     }
     
+    /* Header Styling */
     header { 
       padding: 60px 20px; 
       text-align: center; 
-      background: url('index.jpeg') no-repeat center center; 
-      background-size: cover; 
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('index.jpeg') no-repeat center center; 
+      background-size: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     header img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 50%; /* Optional: Makes the profile image circular and cleaner */
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #04c5fa;
       object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     }
     
     h1 { 
-      font-size: 2.5rem; 
-      margin-top: 15px; 
-      margin-bottom: 10px; 
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      font-size: 2.3rem; 
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      letter-spacing: -0.5px;
     }
-    
-    h2 { 
-      font-size: 2.2rem; 
-      margin: 40px 0 20px; 
-      text-align: center; 
-    }
-    
-    p, .p2-replacement { 
-      color: #ffffff; 
-      line-height: 1.6; 
-      max-width: 700px; 
-      margin: 0 auto 40px; 
-    }
-    
-    /* Responsive Navigation Button Container */
+
+    /* Responsive Navigation Layout */
     .nav-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
       justify-content: center;
-      padding: 30px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      gap: 10px;
+      padding: 20px;
+      max-width: 1040px;
+      margin: 20px auto 0;
     }
 
+    /* Optimized Touch Interactive Link Anchors */
     .btn { 
-      display: inline-block; 
-      padding: 10px 20px; 
+      display: inline-flex; 
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px; 
       background: #04c5fa; 
       color: #0b0b0b; 
       text-decoration: none; 
-      border-radius: 8px; 
-      font-weight: bold;
-      font-size: 0.9rem;
-      transition: background 0.3s ease, transform 0.2s ease;
+      border-radius: 10px; 
+      font-weight: 600;
+      font-size: 0.95rem;
+      min-height: 48px; /* High fidelity mobile touch targeting size */
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
       text-align: center;
     }
     
     .btn:hover { 
-      background: #03a3d0; 
+      background: #039ec8; 
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(4, 197, 250, 0.3);
+    }
+
+    .btn:active {
+      transform: translateY(0);
     }
     
-    /* Feedback Section Container */
+    /* Main Content Wrapper padding */
+    main {
+      padding: 10px 20px;
+    }
+
+    /* Feedback Section Wrapper Block */
     section#feedback { 
       padding: 40px 20px; 
-      max-width: 800px; 
-      margin: 0 auto; 
+      max-width: 1040px; 
+      margin: 16px auto; 
       text-align: center;
     }
 
     .feedback-title {
       font-size: 2rem;
-      margin-bottom: 20px;
-      font-weight: bold;
+      margin-bottom: 24px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
 
-    /* Makes iframe perfectly responsive across Apple, Android, and Desktop */
+    /* Flexible High Performance iFrame System wrapper */
     .iframe-wrapper {
       position: relative;
       width: 100%;
+      max-width: 750px;
+      margin: 0 auto 24px;
       overflow: hidden;
-      margin-bottom: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.6);
     }
 
     .iframe-wrapper iframe {
       width: 100%;
-      height: 80vh; /* Scaled dynamically to look great on all device heights */
+      height: 75vh; /* Scales elegantly across dynamic viewport form factor sizes */
       border: 0;
+      display: block;
+      background: #ffffff;
     }
     
     .card { 
-      background: rgba(26, 26, 26, 0.85); 
-      padding: 20px; 
+      background: rgba(26, 26, 26, 0.5); 
+      padding: 16px 24px; 
       border-radius: 12px; 
-      border: 1px solid #333; 
-      font-size: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+      font-size: 1.05rem;
+      font-weight: 500;
       max-width: 600px;
-      margin: 20px auto;
-      backdrop-filter: blur(5px); /* Smooth look on iOS/macOS devices */
+      margin: 20px auto 0;
+      color: #e2e8f0;
+      text-align: center;
     }
     
+    /* Footer Styling */
     footer { 
       background: #04f7db; 
-      padding: 25px 20px; 
+      padding: 32px 16px; 
       text-align: center; 
       color: #0b0b0b; 
       font-size: 0.9rem; 
-      font-weight: bold;
+      font-weight: 600;
+      margin-top: 60px;
     }
 
-@media (max-width: 600px) {
+    /* Cross-Platform Viewport Media Queries */
+    @media (max-width: 768px) {
+      header {
+        padding: 40px 16px;
+      }
+      
       h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.6rem; }
-      .btn { width: 100%; } 
       header img { max-width: 180px; }
-      .video-wrapper { padding: 10px; }
-      .video-title { font-size: 1rem; }
+      
+      .nav-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 balanced columns system for mobile view configurations */
+        gap: 8px;
+        padding: 12px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 10px 14px;
+        font-size: 0.88rem;
+      }
+
+      section#feedback {
+        padding: 30px 16px;
+      }
+
+      .feedback-title {
+        font-size: 1.5rem;
+      }
+      
+      .iframe-wrapper iframe {
+        height: 70vh;
+      }
+
+      .card {
+        font-size: 0.95rem;
+      }
     }
-    
-    /* Media queries for micro-adjustments on mobile views */
-    @media (max-width: 600px) {
-    .nav-btn { 
-        /* width: 100%; ko hata diya h taaki mobile me buttons chote dikhein */
-        flex: 1 1 calc(33.33% - 10px); 
-    } 
-}
+
+    @media (max-width: 420px) {
+      /* Vertical standard inline adjustment for ultra-narrow viewport structures */
+      .nav-container {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="feedback.jpeg" width="250" height="250" alt="Akshat Nahar">
+    <img src="feedback.jpeg" alt="Akshat Nahar Profile Banner Element">
     <h1>Feedback Please!</h1>
   </header>
 
@@ -165,23 +225,24 @@
     <a href="index(5).html" class="btn">Feedback</a>
   </nav>
 
-  <section id="feedback">
-    <div class="feedback-title">Give me the feedback</div>
-    
-    <div class="iframe-wrapper">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc4zwtY-lHjFIIQn1AOQTJgvXnSy1Jj5sMsTh7THsZ_yEPWpg/viewform?embedded=true">Loading…</iframe>
-    </div>
-    
-    <p class="card">Swipe down or refresh the page for a new response.</p>
-  </section>
+  <main>
+    <section id="feedback" class="glass-panel">
+      <div class="feedback-title">Give me the feedback</div>
+      
+      <div class="iframe-wrapper">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc4zwtY-lHjFIIQn1AOQTJgvXnSy1Jj5sMsTh7THsZ_yEPWpg/viewform?embedded=true">Loading…</iframe>
+      </div>
+      
+      <p class="card">Swipe down or refresh the page for a new response.</p>
+    </section>
+  </main>
 
   <footer>
     &copy; 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
   </footer>
 
   <script>
-    console.log("Hello from index.js");
-    // Added a check to prevent console errors if "demo" element is missing
+    console.log("Feedback panel asset initialized.");
     const demoEl = document.getElementById("demo");
     if(demoEl) {
       demoEl.innerText = "JS loaded";
