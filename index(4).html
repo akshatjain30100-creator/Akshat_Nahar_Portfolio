@@ -1,59 +1,153 @@
+<!DOCTYPE html>
 <html lang="en">
-<head meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshat Nahar | Portfolio</title>
-<style>* { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
-  body { background: rgb(0, 0, 0); color: #ffffff; line-height: 1.6; }
-  header { padding: 80px 20px; text-align: center;background: linear-gradient(180deg, #000000 0%, #000000 100%); }
-  h1 {font-size: 2.7rem; margin-bottom: 10px; }
-  h2 { font-size: 2.7rem; margin: 40px 0 20px; text-align: center; }
-  p { color: #ffffff; border:#0b0b0b; line-height: 1.6; max-width: 700px; margin: 0 auto 80px; }
-  p2 { color: #ffffff; border:#ffffff; line-height: 1.6; max-width: 700px; margin: 0 auto 80px; }
- .btn { display: inline-block; padding: 12px 24px; background: #4f46e5; color: white; text-decoration: none; border-radius: 8px; margin-top: 20px; }
- .btn:hover { background: #4338ca; }
-  section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
- .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
- .card { background: #1a1a1a; padding: 20px; border-radius: 12px; border: 1px solid #333; }
- .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
- .skill { background: #0aa0ec; padding: 8px 14px; border-radius: 20px; font-size: 0.9rem; }
-  footer { background: #04f7db; padding: 8px 14px; text-align: center; padding: 40px 20px; color: #0b0b0b; font-size: 0.9rem; }</style>
-</style>
-<body style="background:url('index(1).jpeg'); background-size: cover;">
-    <header style="background:url('index.jpeg'); background-size: cover;">
-      <img src="certify.jpeg" width="350" height="350" alt="Akshat Nahar";>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshat Nahar | Portfolio</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+        }
+        
+        body { 
+            background: rgb(0, 0, 0); 
+            color: #ffffff; 
+            line-height: 1.6; 
+        }
+
+        header { 
+            padding: 60px 20px; 
+            text-align: center;
+            background: url('index.jpeg') no-repeat center center;
+            background-size: cover;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 10px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        /* Navigation Button Container */
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            padding: 30px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .btn { 
+            display: inline-block; 
+            padding: 12px 24px; 
+            background: #04c5fa; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        .btn:hover { 
+            background: #03a8d4; 
+            transform: translateY(-2px);
+        }
+
+        /* Certificate Gallery Section */
+        #certificates-gallery { 
+            padding: 40px 20px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            max-width: 900px; /* Limits maximum desktop size */
+            height: auto; /* Maintains aspect ratio automatically */
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(250, 250, 250, 0.1);
+        }
+
+        footer { 
+            background: #04f7db; 
+            text-align: center; 
+            padding: 30px 20px; 
+            color: #0b0b0b; 
+            font-size: 0.9rem; 
+            font-weight: 500;
+            margin-top: 50px;
+        }
+
+        /* Target Mobile (Apple & Android) & Small Tablets */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            header { padding: 40px 15px; }
+            .btn { width: 100%; } /* Stack buttons cleanly on mobile devices */
+            .nav-container { padding: 15px; gap: 10px; }
+            .image-gallery { gap: 15px; }
+        }
+    </style>
+</head>
+<body style="background: url('index(1).jpeg') no-repeat center center fixed; background-size: cover;">
+
+    <header>
+        <img src="certify.jpeg" width="350" height="350" alt="Akshat Nahar">
         <h1>Check My</h1>
         <h1>Certificates</h1>
     </header>
-<section id="about">
-  <a href="index.html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Home</a>  
-  <a href="index(1).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Photo Gallery</a>
-  <a href="index(2).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Video Gallery</a>
-  <a href="index(3).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Social Media</a>
-  <a href="index(4).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Certificates</a>
-  <a href="index(5).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Feedback</a>
-</section>
 
-<section id="contact us">
-  <div class="none">
-      <img src="c1.jpeg" width="900" height="500" alt="Akshat Nahar";>
-      <img src="c2.jpeg" width="900" height="1000" alt="Akshat Nahar";>
-      <img src="c3.jpeg" width="880" height="450" alt="Akshat Nahar";>
-      <img src="o1.jpeg" width="900" height="500" alt="Akshat Nahar";>
-      <img src="o2.jpeg" width="900" height="500" alt="Akshat Nahar";>
-      <img src="o3.jpeg" width="900" height="500" alt="Akshat Nahar";>
-  </div>
-</section>
-  
-<script>
-  console.log("Hello from index.js");
-  document.getElementById("demo").innerText = "JS loaded";
-</script>
+    <nav class="nav-container">
+        <a href="index.html" class="btn">Home</a>  
+        <a href="index(1).html" class="btn">Photo Gallery</a>
+        <a href="index(2).html" class="btn">Video Gallery</a>
+        <a href="index(3).html" class="btn">Social Media</a>
+        <a href="index(4).html" class="btn">Certificates</a>
+        <a href="index(5).html" class="btn">Feedback</a>
+    </nav>
 
-<meta charset="UTF-8">
+    <section id="certificates-gallery">
+        <div class="image-gallery">
+            <img src="c1.jpeg" alt="Certificate 1">
+            <img src="c2.jpeg" alt="Certificate 2">
+            <img src="c3.jpeg" alt="Certificate 3">
+            <img src="o1.jpeg" alt="Other Image 1">
+            <img src="o2.jpeg" alt="Other Image 2">
+            <img src="o3.jpeg" alt="Other Image 3">
+        </div>
+    </section>
+      
+    <footer>
+        &copy; 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
+    </footer>
 
-<footer>
-  © 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
-</footer>
+    <script>
+        console.log("Hello from index.js");
+        // Safe check in case the element 'demo' exists elsewhere in your template
+        const demoElem = document.getElementById("demo");
+        if (demoElem) {
+            demoElem.innerText = "JS loaded";
+        }
+    </script>
 </body>
-</head>
 </html>
