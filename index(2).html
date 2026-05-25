@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akshat Nahar | Portfolio</title>
+  <title>Akshat Nahar | Video Gallery</title>
   <style>
     /* Reset and Base Styles */
     * { 
@@ -24,28 +24,31 @@
     header { 
       padding: 60px 20px; 
       text-align: center; 
-      background: url('index.jpeg') no-repeat center center;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('index.jpeg') no-repeat center center;
       background-size: cover; 
     }
     
     header img {
       width: 100%;
-      max-width: 250px; /* Scaled down for better mobile proportions */
+      max-width: 220px; 
       height: auto;
-      border-radius: 50%; /* Optional: makes profile image look cleaner */
+      border-radius: 50%; 
       margin-bottom: 15px;
+      border: 3px solid #04c5fa;
+      object-fit: cover;
     }
 
     h1 { 
       font-size: 2.5rem; 
       margin-bottom: 10px; 
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
     
     h2 { 
       font-size: 2.2rem; 
       margin: 20px 0; 
       text-align: center; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
 
     p { 
@@ -54,6 +57,7 @@
       max-width: 700px; 
       margin: 0 auto 30px; 
       text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     }
 
     /* Navigation Menu */
@@ -69,7 +73,7 @@
       display: inline-block; 
       padding: 10px 20px; 
       background: #04c5fa; 
-      color: white; 
+      color: #0b0b0b; 
       text-decoration: none; 
       border-radius: 8px; 
       font-weight: bold;
@@ -100,24 +104,27 @@
 
     .video-wrapper {
       width: 100%;
-      max-width: 850px; /* Looks great on desktop */
+      max-width: 850px; 
       background: rgba(26, 26, 26, 0.9);
       padding: 15px;
       border-radius: 12px;
       border: 1px solid #333;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
 
     .video-wrapper video {
       width: 100%;
-      height: auto; /* Maintains aspect ratio on mobile and desktop */
+      height: auto; 
       border-radius: 8px;
+      outline: none;
     }
 
     .video-title {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      font-weight: 500;
+      margin-top: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #04c5fa;
     }
 
     /* Footer */
@@ -127,15 +134,18 @@
       padding: 30px 20px; 
       color: #0b0b0b; 
       font-size: 0.9rem; 
-      font-weight: 500;
+      font-weight: bold;
+      margin-top: 50px;
     }
 
     /* Responsive adjustments for smaller screens (Mobile/Android/iPhone) */
     @media (max-width: 600px) {
       h1 { font-size: 1.8rem; }
       h2 { font-size: 1.6rem; }
-      .btn { width: 100%; text-align: center; } /* Stack buttons neatly on narrow screens */
+      .btn { width: 100%; text-align: center; } 
       header img { max-width: 180px; }
+      .video-wrapper { padding: 10px; }
+      .video-title { font-size: 1rem; }
     }
   </style>
 </head>
@@ -147,42 +157,42 @@
     <h1>To Video Gallery</h1>
   </header>
 
-  <!-- Navigation Section -->
-  <section id="about">
-    <div class="nav-container">
-      <a href="index.html" class="btn">Home</a>  
-      <a href="index(1).html" class="btn">Photo Gallery</a>
-      <a href="index(2).html" class="btn">Video Gallery</a>
-      <a href="index(3).html" class="btn">Social Media</a>
-      <a href="index(4).html" class="btn">Certificates</a>
-      <a href="index(5).html" class="btn">Feedback</a>
-    </div>
-  </section>
+  <nav class="nav-container">
+    <a href="index.html" class="btn">Home</a>  
+    <a href="index(1).html" class="btn">Photo Gallery</a>
+    <a href="index(2).html" class="btn">Video Gallery</a>
+    <a href="index(3).html" class="btn">Social Media</a>
+    <a href="index(4).html" class="btn">Certificates</a>
+    <a href="index(5).html" class="btn">Feedback</a>
+  </nav>
 
-  <!-- Video Section -->
-  <section id="Video">
-    <h2>Videos</h2>
-    <p style="font-size: 1.2rem;">Here are the videos related to my academics and subjects.</p>
-    
-    <div class="video-grid">
+  <main>
+    <section id="Video">
+      <h2>Videos</h2>
+      <p style="font-size: 1.2rem;">Here are the videos related to my academics and subjects.</p>
       
-      <div class="video-wrapper">
-        <video src="C code 188.mp4" controls></video>
-        <div class="video-title">C code Menu Driven Program</div>
-      </div>
+      <div id="demo" style="text-align:center; color:#04c5fa; margin-bottom: 15px;"></div>
+      
+      <div class="video-grid">
+        
+        <div class="video-wrapper">
+          <video src="C code 188.mp4" controls></video>
+          <div class="video-title">C code Menu Driven Program</div>
+        </div>
 
-      <div class="video-wrapper">
-        <video src="Brand Rejuvenation Competition-Aryan's BizHub.mp4" controls></video>
-        <div class="video-title">Brand Rejuvenation Competition - Aryan's BizHub</div>
-      </div>
+        <div class="video-wrapper">
+          <video src="Brand Rejuvenation Competition-Aryan's BizHub.mp4" controls></video>
+          <div class="video-title">Brand Rejuvenation Competition - Aryan's BizHub</div>
+        </div>
 
-      <div class="video-wrapper">
-        <video src="PyData Handling project.mp4" controls></video>
-        <div class="video-title">PyData Handling Project</div>
-      </div>
+        <div class="video-wrapper">
+          <video src="PyData Handling project.mp4" controls></video>
+          <div class="video-title">PyData Handling Project</div>
+        </div>
 
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
   <footer>
     &copy; 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
@@ -190,10 +200,9 @@
 
   <script>
     console.log("Hello from index.js");
-    // Safer check if an element with id "demo" exists before changing text
     const demoElem = document.getElementById("demo");
     if(demoElem) {
-      demoElem.innerText = "JS loaded";
+      demoElem.innerText = "Gallery Assets Loaded";
     }
   </script>
 
