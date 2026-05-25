@@ -143,13 +143,16 @@
       box-shadow: 0 6px 18px rgba(4, 197, 250, 0.2);
     }
     
+    /* Displays Full Size Photos Without Cropping */
     .card img {
       width: 100%;
-      height: 260px;
-      object-fit: cover;
+      height: auto;
+      max-height: 320px; /* Limits oversized vertical blowouts while maintaining full uncropped aspect ratio */
+      object-fit: contain;
       border-radius: 10px;
       margin-bottom: 16px;
       border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
     }
     
     .card .btn {
@@ -225,10 +228,6 @@
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 16px;
       }
-      
-      .card img {
-        height: 220px;
-      }
     }
 
     @media (max-width: 420px) {
@@ -293,7 +292,7 @@
       <h2>Our Location</h2>
       <div class="map-container">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.7423588998054!2d74.6062758!3d26.4640498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be71e342735bd%3A0x8670daef279ec97!2sAryan%20College!5e0!3m2!1sen!2sin!4v1710000000000" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.24719602494!2d74.63287817542318!3d26.45746117692138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be71c1259038d%3A0x387b34445ffb8a32!2sMadar%20Gate!5e0!3m2!1sen!2sin!4v1716418000000!5m2!1sen!2sin"
           loading="lazy" 
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen>
