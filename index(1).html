@@ -9,7 +9,10 @@
       margin: 0; 
       padding: 0; 
       box-sizing: border-box; 
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji","Seoje UI Emoji";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent; /* Removes the dark flash block on Android link taps */
     }
     
     body { 
@@ -17,13 +20,25 @@
       background-size: cover;
       color: #ffffff; 
       line-height: 1.6; 
+      padding: 0;
+      overflow-x: hidden;
+      width: 100%;
     }
 
+/* Universal Glass Container Backdrop */
+    .glass-panel {
+      background: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
     header { 
       padding: 60px 20px; 
       text-align: center;
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('index.jpeg') no-repeat center center;
-      background-size: cover; 
+      background-size: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     header img {
@@ -47,7 +62,7 @@
       text-align: center; 
     }
 
-    p { 
+    p , .about-text{ 
       color: #ffffff; 
       line-height: 1.6; 
       max-width: 700px; 
