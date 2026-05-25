@@ -1,61 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshat Nahar | Portfolio</title>
-<style>* { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
-  body { background: rgb(0, 0, 0); color: #ffffff; line-height: 1.6; }
-  header { padding: 80px 20px; text-align: center;background: linear-gradient(180deg, #000000 0%, #000000 100%); }
-  h1 {font-size: 2.7rem; margin-bottom: 10px; }
-  h2 { font-size: 2.7rem; margin: 40px 0 20px; text-align: center; }
-  p { color: #ffffff; border:#0b0b0b; line-height: 1.6; max-width: 700px; margin: 0 auto 80px; }
-  p2 { color: #ffffff; border:#ffffff; line-height: 1.6; max-width: 700px; margin: 0 auto 80px; }
- .btn { display: inline-block; padding: 12px 24px; background: #4f46e5; color: white; text-decoration: none; border-radius: 8px; margin-top: 20px; }
- .btn:hover { background: #4338ca; }
-  section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
- .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
- .card { background: #1a1a1a; padding: 20px; border-radius: 12px; border: 1px solid #333; }
- .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
- .skill { background: #0aa0ec; padding: 8px 14px; border-radius: 20px; font-size: 0.9rem; }
-  footer { background: #04f7db; padding: 8px 14px; text-align: center; padding: 40px 20px; color: #0b0b0b; font-size: 0.9rem; }</style>
-</style>
-<body style="background:url('index(1).jpeg'); background-size: cover;">
-    <header style="background:url('index.jpeg'); background-size: cover;">
-      <img src="photo.jpeg" width="350" height="350" alt="Akshat Nahar";>
-        <h1>Welcome!</h1>
-        <h1>To Photo Gallery</h1>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshat Nahar | Portfolio</title>
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    }
+    
+    body { 
+      background: url('index(1).jpeg') no-repeat center center fixed; 
+      background-size: cover;
+      color: #ffffff; 
+      line-height: 1.6; 
+    }
 
-<section id="about">
-  <a href="index.html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Home</a>  
-  <a href="index(1).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Photo Gallery</a>
-  <a href="index(2).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Video Gallery</a>
-  <a href="index(3).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Social Media</a>
-  <a href="index(4).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Certificates</a>
-  <a href="index(5).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Feedback</a>
-</section>
+    header { 
+      padding: 60px 20px; 
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('index.jpeg') no-repeat center center;
+      background-size: cover; 
+    }
 
-<section id="photo">
-  <p style="font-size: 26px"> Here are the photos related to my academics and subjects.</p>
-  <div class="">
-      <img src="july.jpeg" width="900" height="450" alt="Akshat Nahar";></img>
-      <img src="aug.jpeg" width="900" height="450" alt="Akshat Nahar";></img>
-      <img src="nov.jpeg" width="900" height="450" alt="Akshat Nahar";></img>
-      <img src="dec.jpeg" width="450" height="850" alt="Akshat Nahar";></img>
-      <img src="jan.jpeg" width="450" height="850" alt="Akshat Nahar";></img>
-  </div>
-</section>
-  
-<script>
-  console.log("Hello from index.js");
-  document.getElementById("demo").innerText = "JS loaded";
-</script>
+    header img {
+      border-radius: 50%;
+      object-fit: cover;
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 15px;
+      border: 3px solid #04c5fa;
+    }
 
-<meta charset="UTF-8">
+    h1 { 
+      font-size: 2.5rem; 
+      margin-bottom: 10px; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
 
-<footer>
-  © 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
-</footer>
-</body>
+    h2 { 
+      font-size: 2rem; 
+      margin: 40px 0 20px; 
+      text-align: center; 
+    }
+
+    p { 
+      color: #ffffff; 
+      line-height: 1.6; 
+      max-width: 700px; 
+      margin: 0 auto 30px; 
+      text-align: center;
+    }
+
+    /* Responsive Navigation */
+    .nav-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .btn { 
+      display: inline-block; 
+      padding: 12px 24px; 
+      background: #04c5fa; 
+      color: #000; 
+      text-decoration: none; 
+      border-radius: 8px; 
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-align: center;
+    }
+
+    .btn:hover { 
+      background: #039ec8; 
+      transform: translateY(-2px);
+    }
+
+    section { 
+      padding: 40px 20px; 
+      max-width: 1100px; 
+      margin: 0 auto; 
+    }
+
+    /* Responsive Image Gallery */
+    .gallery-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 20px; 
+      padding: 20px 0;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #333;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+      border-color: #04c5fa;
+    }
+
+    footer { 
+      background: #04f7db; 
+      padding: 30px 20px; 
+      text-align: center; 
+      color: #0b0b0b; 
+      font-size: 0.9rem; 
+      font-weight: bold;
+      margin-top: 50px;
+    }
+
+    /* Target specific screen sizes if needed */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .btn { width: 100%; } /* Full width buttons on small mobile screens */
+      .gallery-grid { grid-template-columns: 1fr; } /* Single column images on mobile */
+      .gallery-grid img { height: 250px; }
+    }
+  </style>
 </head>
+<body>
+
+  <header>
+    <img src="photo.jpeg" alt="Akshat Nahar">
+    <h1>Welcome!</h1>
+    <h1>To Photo Gallery</h1>
+  </header>
+
+  <nav class="nav-container">
+    <a href="index.html" class="btn">Home</a>  
+    <a href="index(1).html" class="btn">Photo Gallery</a>
+    <a href="index(2).html" class="btn">Video Gallery</a>
+    <a href="index(3).html" class="btn">Social Media</a>
+    <a href="index(4).html" class="btn">Certificates</a>
+    <a href="index(5).html" class="btn">Feedback</a>
+  </nav>
+
+  <main>
+    <section id="photo">
+      <p style="font-size: 22px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+        Here are the photos related to my academics and subjects.
+      </p>
+      
+      <div id="demo" style="text-align:center; color:#04c5fa; margin-bottom: 10px;"></div>
+
+      <div class="gallery-grid">
+        <img src="july.jpeg" alt="Academic Photo July">
+        <img src="aug.jpeg" alt="Academic Photo August">
+        <img src="nov.jpeg" alt="Academic Photo November">
+        <img src="dec.jpeg" alt="Academic Photo December">
+        <img src="jan.jpeg" alt="Academic Photo January">
+      </div>
+    </section>
+  </main>
+    
+  <footer>
+    © 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
+  </footer>
+
+  <script>
+    console.log("Hello from index.js");
+    document.getElementById("demo").innerText = "JS loaded successfully";
+  </script>
+</body>
 </html>
