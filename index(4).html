@@ -50,16 +50,22 @@
         }
 
         .btn { 
-            display: inline-block; 
-            padding: 12px 24px; 
-            background: #04c5fa; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold;
-            transition: background 0.3s ease, transform 0.2s ease;
-            text-align: center;
-        }
+    display: inline-block; 
+    padding: 6px 14px; /* Pehle 12px 24px tha, padding kam karne se size chota ho jayega */
+    color: #0b0b0b; 
+    text-decoration: none; 
+    border-radius: 6px; /* Chote button ke sath chota radius zyada achha lagta h */
+    font-weight: bold;
+    font-size: 0.8rem; /* Font size ko 0.9rem se kam karke 0.8rem kiya */
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.nav-btn {
+    background: #04c5fa;
+    flex: 1 1 calc(33.33% - 10px); /* Mobile view par ek line mei 3 buttons aane lagenge */
+    max-width: 120px; /* Chota size maintain karne ke liye max-width kam ki */
+}
 
         .btn:hover { 
             background: #03a8d4; 
@@ -100,13 +106,12 @@
         }
 
         /* Target Mobile (Apple & Android) & Small Tablets */
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            header { padding: 40px 15px; }
-            .btn { width: 100%; } /* Stack buttons cleanly on mobile devices */
-            .nav-container { padding: 15px; gap: 10px; }
-            .image-gallery { gap: 15px; }
-        }
+        @media (max-width: 600px) {
+    .nav-btn { 
+        /* width: 100%; ko hata diya h taaki mobile me buttons chote dikhein */
+        flex: 1 1 calc(33.33% - 10px); 
+    } 
+}
     </style>
 </head>
 <body style="background: url('index(1).jpeg') no-repeat center center fixed; background-size: cover;">
