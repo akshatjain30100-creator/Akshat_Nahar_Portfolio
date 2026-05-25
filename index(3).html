@@ -1,94 +1,214 @@
+<!DOCTYPE html>
 <html lang="en">
-<head meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshat Nahar | Portfolio</title>
-<style>* { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
-  body { background: rgb(0, 0, 0); color: #ffffff; line-height: 1.6; }
-  header { padding: 80px 20px; text-align: center;background: linear-gradient(180deg, #000000 0%, #000000 100%); }
-  h1 {font-size: 2.7rem; margin-bottom: 10px; }
-  h2 { font-size: 2.7rem; margin: 40px 0 20px; text-align: center; }
-  p { color: #ffffff; border:#0b0b0b; line-height: 1.6; max-width: 700px; margin: 0 auto 80px; }
-  p2 { color: #ffffff; border:#ffffff; line-height: 1.6; max-width: 700px; margin: 0 auto 80px; }
- .btn { display: inline-block; padding: 12px 24px; background: #4f46e5; color: white; text-decoration: none; border-radius: 8px; margin-top: 20px; }
- .btn:hover { background: #4338ca; }
-  section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
- .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
- .card { background: #1a1a1a; padding: 20px; border-radius: 12px; border: 1px solid #333; }
- .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
- .skill { background: #0aa0ec; padding: 8px 14px; border-radius: 20px; font-size: 0.9rem; }
-  footer { background: #04f7db; padding: 8px 14px; text-align: center; padding: 40px 20px; color: #0b0b0b; font-size: 0.9rem; }</style>
-</style>
-<body style="background:url('index(1).jpeg'); background-size: cover;">
-    <header style="background:url('index.jpeg'); background-size: cover;">
-      <img src="socialmedia.jpeg" width="350" height="350" alt="Akshat Nahar";>
-        <h1>Follow!</h1>
-        <h1>Us On</h1>
-    </header>
-<section id="about">
-  <a href="index.html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Home</a>  
-  <a href="index(1).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Photo Gallery</a>
-  <a href="index(2).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Video Gallery</a>
-  <a href="index(3).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Social Media</a>
-  <a href="index(4).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Certificates</a>
-  <a href="index(5).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Feedback</a>
-</section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshat Nahar | Portfolio</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+        }
+        body { 
+            background: url('index(1).jpeg') no-repeat center center fixed; 
+            background-size: cover; 
+            color: #ffffff; 
+            line-height: 1.6; 
+        }
+        header { 
+            padding: 60px 20px; 
+            text-align: center; 
+            background: url('index.jpeg') no-repeat center center; 
+            background-size: cover; 
+        }
+        header img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 10px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        /* Navigation Section */
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 30px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .btn { 
+            display: inline-block; 
+            padding: 12px 24px; 
+            background: #4f46e5; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        .btn:hover { 
+            background: #4338ca; 
+        }
+        .nav-btn {
+            background: #04c5fa;
+            flex: 1 1 calc(50% - 10px); /* 2 per row on mobile */
+            max-width: 180px;
+        }
+        .nav-btn:hover {
+            background: #03a3d0;
+        }
 
-<section id="social media">
-  <div class="grid">
-    <div class="card">
-  <img src="a.jpeg" width="260"  height="400" alt="Akshat Nahar";></img>
-  <a  href="https://www.linkedin.com/in/akshat-nahar-jain-6b2a6a31a/" style="background-color: blue;font-weight: bold;" class="btn">LinkedIn</a>
-  </div>
-    <div class="card">
-  <img src="b.jpeg" width="260" height="400" alt="Akshat Nahar" ></img>
-  <a href="https://www.instagram.com/akshatnahar.in/" style="background-color: blue; font-weight: bold" class="btn">Instagram</a>
-    </div>
-    <div class="card">
-  <img src="c.jpeg" width="260" height="400" alt="Akshat Nahar" ></img>
-  <a href="https://www.threads.com/@akshatnahar.in" style="background-color: blue; font-weight: bold;" class="btn">Threads</a>
-  </div>
-  <div class="card">
-  <img src="d.jpeg" width="260" height="400" alt="Akshat Nahar" ></img>
-  <a href="https://github.com/akshatjain30100-creator/C-Language-Prgt" style="background-color: blue; border-radius: 5px; font-weight: bold;" class="btn">github</a>
-  </div>
-  <div class="card">
-  <img src="e.jpeg" width="260" height="400" alt="Akshat Nahar" ></img>
-  <a href="https://x.com/AkshatJain81893" style="background-color: blue; font-weight: bold;" class="btn">X</a>
-  </div>
-  <div class="card">
-  <img src="f.jpeg" width="260" height="400" alt="Akshat Nahar" ></img>
-  <a href="https://www.facebook.com/profile.php?id=61576915678488" style="background-color: blue; font-weight: bold;" class="btn">Facebook</a>
-  </div>
-  </div>
-</section>
+        /* Social Media Section */
+        #social-media { 
+            padding: 40px 20px; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+        }
+        .card { 
+            background: rgba(26, 26, 26, 0.9); 
+            padding: 20px; 
+            border-radius: 12px; 
+            border: 1px solid #333; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card img {
+            width: 100%;
+            max-width: 260px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .card .btn {
+            width: 100%;
+            background-color: #007bff;
+        }
 
-  <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
-  <!-- The Box Container -->
-  <div style="background-color: #ffffff; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; width: 630px;">
-    
-    <!-- Google Map iframe -->
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.24719602494!2d74.63287817542318!3d26.45746117692138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be71c1259038d%3A0x387b34445ffb8a32!2sMadar%20Gate!5e0!3m2!1sen!2sin!4v1716418000000!5m2!1sen!2sin" 
-      width="100%" 
-      height="450" 
-      style="border:0; border-radius: 4px;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-    
-  </div>
-</div>
-  
-<script>
-  console.log("Hello from index.js");
-  document.getElementById("demo").innerText = "JS loaded";
-</script>
+        /* Map Container */
+        .map-wrapper {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 40px 20px;
+        }
+        .map-container {
+            background-color: #ffffff; 
+            padding: 15px; 
+            border: 1px solid #e0e0e0; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+            width: 100%; 
+            max-width: 630px;
+        }
+        iframe {
+            border: 0; 
+            border-radius: 4px;
+            width: 100%;
+            height: 400px;
+        }
 
+        footer { 
+            background: #04f7db; 
+            padding: 30px 20px; 
+            text-align: center; 
+            color: #0b0b0b; 
+            font-size: 0.9rem; 
+            font-weight: bold;
+        }
 
-<footer>
-  © 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
-</footer>
-</body>
+        /* Desktop Adjustments */
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .nav-btn { flex: 0 1 auto; } /* Normal sizing on desktop */
+            header { padding: 80px 20px; }
+            iframe { height: 450px; }
+        }
+    </style>
 </head>
+<body>
+
+    <header>
+        <img src="socialmedia.jpeg" alt="Akshat Nahar">
+        <h1>Follow Us On</h1>
+    </header>
+
+    <section id="about" class="nav-container">
+        <a href="index.html" class="btn nav-btn">Home</a>  
+        <a href="index(1).html" class="btn nav-btn">Photo Gallery</a>
+        <a href="index(2).html" class="btn nav-btn">Video Gallery</a>
+        <a href="index(3).html" class="btn nav-btn">Social Media</a>
+        <a href="index(4).html" class="btn nav-btn">Certificates</a>
+        <a href="index(5).html" class="btn nav-btn">Feedback</a>
+    </section>
+
+    <section id="social-media">
+        <div class="grid">
+            <div class="card">
+                <img src="a.jpeg" alt="LinkedIn Profile Pic">
+                <a href="https://www.linkedin.com/in/akshat-nahar-jain-6b2a6a31a/" class="btn">LinkedIn</a>
+            </div>
+            <div class="card">
+                <img src="b.jpeg" alt="Instagram Profile Pic">
+                <a href="https://www.instagram.com/akshatnahar.in/" class="btn">Instagram</a>
+            </div>
+            <div class="card">
+                <img src="c.jpeg" alt="Threads Profile Pic">
+                <a href="https://www.threads.com/@akshatnahar.in" class="btn">Threads</a>
+            </div>
+            <div class="card">
+                <img src="d.jpeg" alt="GitHub Repository Pic">
+                <a href="https://github.com/akshatjain30100-creator/C-Language-Prgt" class="btn">GitHub</a>
+            </div>
+            <div class="card">
+                <img src="e.jpeg" alt="X Profile Pic">
+                <a href="https://x.com/AkshatJain81893" class="btn">X</a>
+            </div>
+            <div class="card">
+                <img src="f.jpeg" alt="Facebook Profile Pic">
+                <a href="https://www.facebook.com/profile.php?id=61576915678488" class="btn">Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="map-wrapper">
+        <div class="map-container">
+            <iframe 
+                src="https://maps.google.com/maps?q=Delhi&t=&z=13&ie=UTF-8&iwloc=&output=embed" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+      
+    <footer>
+        &copy; 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
+    </footer>
+
+    <script>
+        console.log("Hello from index.js");
+        // Note: Make sure an element with id="demo" exists if you plan to use this line
+        // document.getElementById("demo").innerText = "JS loaded";
+    </script>
+</body>
 </html>
