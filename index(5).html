@@ -1,53 +1,179 @@
+<!DOCTYPE html>
 <html lang="en">
-<head meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshat Nahar | Portfolio</title>
-<style>* { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
-  body { background: rgb(0, 0, 0); color: #ffffff; line-height: 1.6; }
-  header { padding: 80px 20px; text-align: center;background: linear-gradient(180deg, #000000 0%, #000000 100%); }
-  h1 {font-size: 2.7rem; margin-bottom: 10px; }
-  h2 { font-size: 2.7rem; margin: 40px 0 20px; text-align: center; }
-  p { color: #ffffff; border:#0b0b0b; line-height: 1.6; max-width: 700px; margin: 0 auto 80px; }
-  p2 { color: #ffffff; border:#ffffff; line-height: 1.6; max-width: 700px; margin: 0 auto 80px; }
- .btn { display: inline-block; padding: 12px 24px; background: #4f46e5; color: white; text-decoration: none; border-radius: 8px; margin-top: 20px; }
- .btn:hover { background: #4338ca; }
-  section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
- .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
- .card { background: #1a1a1a; padding: 20px; border-radius: 12px; border: 1px solid #333; }
- .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
- .skill { background: #0aa0ec; padding: 8px 14px; border-radius: 20px; font-size: 0.9rem; }
-  footer { background: #04f7db; padding: 8px 14px; text-align: center; padding: 40px 20px; color: #0b0b0b; font-size: 0.9rem; }</style>
-</style>
-<body style="background:url('index(1).jpeg'); background-size: cover;">
-    <header style="background:url('index.jpeg'); background-size: cover;">
-      <img src="feedback.jpeg" width="350" height="350" alt="Akshat Nahar";>
-        <h1>Feedback Please!</h1>
-    </header>
-<section id="about">
-  <a href="index.html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Home</a>  
-  <a href="index(1).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Photo Gallery</a>
-  <a href="index(2).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Video Gallery</a>
-  <a href="index(3).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Social Media</a>
-  <a href="index(4).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Certificates</a>
-  <a href="index(5).html" font-weight: bold class="btn" style="background:#04c5fa; margin-right:10px;">Feedback</a>
-</section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshat Nahar | Portfolio</title>
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    }
+    
+    body { 
+      background: url('index(1).jpeg') no-repeat center center fixed; 
+      background-size: cover; 
+      color: #ffffff; 
+      line-height: 1.6; 
+    }
+    
+    header { 
+      padding: 60px 20px; 
+      text-align: center; 
+      background: url('index.jpeg') no-repeat center center; 
+      background-size: cover; 
+    }
 
-<section id="feedback">
-  <p style="font-size: 50px";>Give me the feedback</p>
-<iframe  src="https://docs.google.com/forms/d/e/1FAIpQLSc4zwtY-lHjFIIQn1AOQTJgvXnSy1Jj5sMsTh7THsZ_yEPWpg/viewform?embedded=true" width="930" height="2110" frameborder="0" marginheight="0" marginwidth="5">Loading…</iframe>
-<p style="font-size: 50px" class="card";>swipe down for refresh page for new response</p>
-</section>
+    header img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%; /* Optional: Makes the profile image circular and cleaner */
+      object-fit: cover;
+    }
+    
+    h1 { 
+      font-size: 2.5rem; 
+      margin-top: 15px; 
+      margin-bottom: 10px; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    h2 { 
+      font-size: 2.2rem; 
+      margin: 40px 0 20px; 
+      text-align: center; 
+    }
+    
+    p, .p2-replacement { 
+      color: #ffffff; 
+      line-height: 1.6; 
+      max-width: 700px; 
+      margin: 0 auto 40px; 
+    }
+    
+    /* Responsive Navigation Button Container */
+    .nav-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-<script>
-  console.log("Hello from index.js");
-  document.getElementById("demo").innerText = "JS loaded";
-</script>
+    .btn { 
+      display: inline-block; 
+      padding: 12px 24px; 
+      background: #04c5fa; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 8px; 
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    
+    .btn:hover { 
+      background: #03a3d0; 
+    }
+    
+    /* Feedback Section Container */
+    section#feedback { 
+      padding: 40px 20px; 
+      max-width: 800px; 
+      margin: 0 auto; 
+      text-align: center;
+    }
 
-<meta charset="UTF-8">
+    .feedback-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
 
-<footer>
-  © 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
-</footer>
-</body>
+    /* Makes iframe perfectly responsive across Apple, Android, and Desktop */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 80vh; /* Scaled dynamically to look great on all device heights */
+      border: 0;
+    }
+    
+    .card { 
+      background: rgba(26, 26, 26, 0.85); 
+      padding: 20px; 
+      border-radius: 12px; 
+      border: 1px solid #333; 
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 20px auto;
+      backdrop-filter: blur(5px); /* Smooth look on iOS/macOS devices */
+    }
+    
+    footer { 
+      background: #04f7db; 
+      padding: 25px 20px; 
+      text-align: center; 
+      color: #0b0b0b; 
+      font-size: 0.9rem; 
+      font-weight: bold;
+    }
+
+    /* Media queries for micro-adjustments on mobile views */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .feedback-title { font-size: 1.6rem; }
+      .btn { width: 100%; text-align: center; } /* Stack buttons nicely on small phones */
+    }
+  </style>
 </head>
+<body>
+
+  <header>
+    <img src="feedback.jpeg" width="250" height="250" alt="Akshat Nahar">
+    <h1>Feedback Please!</h1>
+  </header>
+
+  <nav class="nav-container">
+    <a href="index.html" class="btn">Home</a>  
+    <a href="index(1).html" class="btn">Photo Gallery</a>
+    <a href="index(2).html" class="btn">Video Gallery</a>
+    <a href="index(3).html" class="btn">Social Media</a>
+    <a href="index(4).html" class="btn">Certificates</a>
+    <a href="index(5).html" class="btn">Feedback</a>
+  </nav>
+
+  <section id="feedback">
+    <div class="feedback-title">Give me the feedback</div>
+    
+    <div class="iframe-wrapper">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc4zwtY-lHjFIIQn1AOQTJgvXnSy1Jj5sMsTh7THsZ_yEPWpg/viewform?embedded=true">Loading…</iframe>
+    </div>
+    
+    <p class="card">Swipe down or refresh the page for a new response.</p>
+  </section>
+
+  <footer>
+    &copy; 2026 Akshat Nahar. Built with Akshat Digital Intelligence.
+  </footer>
+
+  <script>
+    console.log("Hello from index.js");
+    // Added a check to prevent console errors if "demo" element is missing
+    const demoEl = document.getElementById("demo");
+    if(demoEl) {
+      demoEl.innerText = "JS loaded";
+    }
+  </script>
+</body>
 </html>
