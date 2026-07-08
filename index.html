@@ -13,7 +13,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; 
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      -webkit-tap-highlight-color: transparent; /* Removes the dark flash block on Android link taps */
+      -webkit-tap-highlight-color: transparent;
     }
     
     body { 
@@ -36,14 +36,14 @@
 
     /* Header Styling */
     header { 
-      padding: 60px 16px; 
+      padding: 80px 16px 60px; 
       text-align: center;
       background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('index.jpeg') no-repeat center center;
       background-size: cover; 
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
     }
 
-    /* Fixed for a guaranteed perfect circle profile photo */
     .profile-img {
       width: 160px;
       height: 160px;
@@ -77,7 +77,95 @@
       font-size: 1.1rem;
     }
 
-    /* Elastic Layout Button Groupings (Adapts beautifully to Desktop, Android, and iOS) */
+    /* Hamburger Menu Button Positioned at Top Right */
+    .menu-toggle {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      z-index: 1001;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .menu-toggle:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #ffffff;
+      border-radius: 2px;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    }
+
+    /* Transforming lines into an 'X' close button when active */
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Fullscreen Overlay Menu Menu Layout */
+    .overlay-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      padding: 24px;
+    }
+
+    .overlay-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .overlay-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #04c5fa;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    /* Container for links inside the overlay menu */
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* Button Layout stylings */
     .btn-container {
       margin-top: 24px;
       display: flex;
@@ -101,7 +189,7 @@
       border-radius: 10px; 
       font-weight: 600;
       font-size: 0.95rem;
-      min-height: 48px; /* Android standard layout sizing for touch targets */
+      min-height: 48px;
       transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
       text-align: center;
@@ -117,7 +205,6 @@
       transform: translateY(0);
     }
 
-    /* Sub-Navigation Controls */
     .nav-btn {
       background: #04c5fa;
       color: #0b0b0b;
@@ -141,7 +228,7 @@
       margin-top: 40px;
     }
 
-    /* Adaptive Grid (Fluid scaling on both low-end Android and high-end monitors) */
+    /* Adaptive Grid */
     .grid { 
       display: grid; 
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -231,7 +318,7 @@
     /* Media Queries for Mobile/Tablet Optimization (iOS & Android) */
     @media (max-width: 768px) {
       header {
-        padding: 40px 16px;
+        padding: 60px 16px 40px;
       }
       
       h1 {
@@ -248,7 +335,7 @@
 
       .btn-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Splits links into dual columns for clean handheld tapping */
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
       }
 
@@ -264,33 +351,47 @@
       }
       
       .card .btn {
-        width: 100%; /* Makes action triggers full-width for easier thumb navigation */
+        width: 100%;
       }
     }
 
     @media (max-width: 420px) {
-      /* Perfect formatting fallback for smaller Android displays and compact iPhones */
       .btn-container {
         grid-template-columns: 1fr;
+      }
+      .menu-toggle {
+        top: 16px;
+        right: 16px;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="IMG-20260523-WA0003.jpg" alt="Akshat Nahar" class="profile-img">
-  <h1>Hi, I'm Akshat Nahar</h1>
-  <p>BCA student & IT enthusiast from Ajmer, Rajasthan. I build projects with Python, C/C++, and databases.</p>
-  
-  <div class="btn-container">
-    <a href="#projects" class="btn">View Projects</a>
+<!-- Three Lines Menu Icon Trigger -->
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- Fullscreen Navigation Menu Overlay -->
+<div class="overlay-menu" id="overlayMenu">
+  <div class="overlay-title">Connect & Discover</div>
+  <div class="menu-links">
+    <a href="#projects" class="btn overlay-close-trigger">View Projects</a>
     <a href="https://www.linkedin.com/in/akshat-nahar-jain-6b2a6a31a" target="_blank" class="btn" style="background:#0A66C2;">LinkedIn</a>
     <a href="https://www.instagram.com/akshatnahar.in/" target="_blank" class="btn" style="background:#c20a75;">Instagram</a>
     <a href="https://www.facebook.com/profile.php?id=61576915678488" target="_blank" class="btn" style="background:#7e04ef;">Facebook</a>
     <a href="https://www.threads.com/@akshatnahar.in?xmt=AQF0u7AvjLYYPd84nhJvgGQkf-nL7xa7nonDy8b-OjSsuF4" target="_blank" class="btn" style="background:#292828;">Threads</a>
     <a href="https://x.com/AkshatJain81893" target="_blank" class="btn" style="background:#000000;">X</a>
   </div>
+</div>
+
+<header>
+  <img src="IMG-20260523-WA0003.jpg" alt="Akshat Nahar" class="profile-img">
+  <h1>Hi, I'm Akshat Nahar</h1>
+  <p>BCA student & IT enthusiast from Ajmer, Rajasthan. I build projects with Python, C/C++, and databases.</p>
 </header>
 
 <section id="about" class="glass-panel">
@@ -381,7 +482,21 @@
 </footer>
 
 <script>
-  console.log("Cross-platform layout loaded successfully.");
+  const menuToggle = document.getElementById('menuToggle');
+  const overlayMenu = document.getElementById('overlayMenu');
+  const projectCloseTrigger = document.querySelector('.overlay-close-trigger');
+
+  // Toggle overlay appearance on menu click
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    overlayMenu.classList.toggle('open');
+  });
+
+  // Automatically close menu when "View Projects" is clicked (since it scrolls down)
+  projectCloseTrigger.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    overlayMenu.classList.remove('open');
+  });
 </script>
 </body>
 </html>
