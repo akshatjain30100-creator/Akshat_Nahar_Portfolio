@@ -304,12 +304,217 @@
       text-decoration: underline;
     }
 
+        /* High-Visibility Expanded Gallery Grid */
+    .gallery-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Increased minimum block width from 320px to 400px */
+      gap: 30px; 
+      padding: 10px 0;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 480px; /* Bumped up height slightly to keep realistic photo aspect ratios with the wider space */
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02) translateY(-4px);
+      border-color: #04c5fa;
+      box-shadow: 0 12px 24px rgba(4, 197, 250, 0.25);
+    }
+
+    /* Lightbox Modal System */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 32px rgba(0,0,0,0.8);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: #ffffff;
+      font-size: 2.5rem;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    /* Video Layout Grid */
+    .video-grid { 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px; 
+      width: 100%;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      max-width: 800px; 
+      background: rgba(26, 26, 26, 0.5);
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: auto; 
+      border-radius: 8px;
+      outline: none;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .video-title {
+      margin-top: 14px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #04c5fa;
+    }
+
+    /* Social Media Layout Grid */
+    #social-media { 
+      padding: 40px 20px; 
+      max-width: 1040px; 
+      margin: 16px auto; 
+    }
+    
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+      gap: 20px; 
+    }
+    
+    .card { 
+      background: rgba(26, 26, 26, 0.5); 
+      padding: 20px; 
+      border-radius: 14px; 
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #04c5fa;
+      box-shadow: 0 6px 18px rgba(4, 197, 250, 0.2);
+    }
+    
+    /* Displays Full Size Photos Without Cropping */
+    .card img {
+      width: 100%;
+      height: auto;
+      max-height: 320px; /* Limits oversized vertical blowouts while maintaining full uncropped aspect ratio */
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .card .btn {
+      width: 100%;
+    }
+
+    /* Map Layout Wrappers */
+    .map-wrapper {
+      padding: 40px 20px;
+      max-width: 1040px;
+      margin: 16px auto;
+    }
+    
+    .map-container {
+      padding: 12px; 
+      background: rgba(26, 26, 26, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+      border-radius: 14px; 
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4); 
+      width: 100%; 
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    iframe {
+      border: 0; 
+      border-radius: 8px;
+      width: 100%;
+      height: 400px;
+      display: block;
+    }
+
+    /* Certificates Gallery Layout Block */
+    #certificates-gallery { 
+      padding: 40px 20px; 
+      max-width: 1040px; 
+      margin: 16px auto; 
+    }
+    
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    .image-gallery img {
+      width: 100%;
+      max-width: 850px; /* Clean standard layout reading view alignment width */
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.015);
+      box-shadow: 0 12px 40px rgba(4, 197, 250, 0.25);
+    }
+
     /* Footer Container */
     footer { 
-      background: #04f7db; 
+      background: #0b0b0b; 
       padding: 32px 16px; 
       text-align: center; 
-      color: #0b0b0b; 
+      color: #ffffff; 
       font-size: 0.9rem; 
       font-weight: 600;
       margin-top: 80px;
@@ -391,23 +596,47 @@
 <header>
   <img src="IMG-20260523-WA0003.jpg" alt="Akshat Nahar" class="profile-img">
   <h1>Hi, I'm Akshat Nahar</h1>
-  <p>BCA student & IT enthusiast from Ajmer, Rajasthan. I build projects with Python, C/C++, and databases.</p>
+  <p>IT student | Learning C++, Java | Analyst | Communication | Leadership | C | Python | SQL </p>
 </header>
 
 <section id="about" class="glass-panel">
   <div class="btn-container" style="margin-bottom: 32px; margin-top: 0;">
     <a href="index.html" class="btn nav-btn">Home</a>  
-    <a href="index(1).html" class="btn nav-btn">Photo Gallery</a>
-    <a href="index(2).html" class="btn nav-btn">Video Gallery</a>
-    <a href="index(3).html" class="btn nav-btn">Social Media</a>
-    <a href="index(4).html" class="btn nav-btn">Certificates</a>
-    <a href="index(5).html" class="btn nav-btn">Feedback</a>
+    <a href="#photo" class="btn nav-btn">Photo Gallery</a>
+    <a href="#Video" class="btn nav-btn">Video Gallery</a>
+    <a href="#certificates" class="btn nav-btn">Certificates</a>
+    <a href="#social-media" class="btn nav-btn">Social Media</a>
   </div>
   
   <h2>About Me</h2>
-  <p class="about-text" style="text-align: center;">
-    I'm a BCA student specializing in Technology. Currently learning C, C++, Python, and Database Technology. 
-    Active member of Bizhub Club of Aryan College, Ajmer.
+  <p class="about-text" style="text-align: left;">
+    Hello, I'm Akshat Nahar a BCA student. I'm a poet who writes beautiful lines that touches everyone.
+    As, an IT student specializing in Technology Field. I'm an optimistic person Truly focus on Design
+    tools  Canva & InShot and programming software like Visual Studio Code for C/C++, PyCharm for Python 
+    and MYSQL(RDBMS). Now I'm giving myself in programming and now I'm learning C++, Java. And already
+    have knowledge in C language, Python and MYSQL. 
+
+<p>🔹️ Goals </p>
+<p>-Full Stack Development</p>
+<p>-Artificial Intelligence Machine Learning Engineer</p>
+<p>-Data Scientist</p>
+
+<p>🔹️ Skills</p>
+<p>• Python Pandas and Mat Plot</p>
+<p>- I've created a project for CBSE practical file</p>
+<p>• RDBMS</p>
+<p>• Microsoft Office 365 </p>
+<p>• Canva</p>
+<p>- I've created my LinkedIn banner with the help of this software </p>
+<p>• In Shot</p>
+<p>- Photo Editing </p>
+
+<p>🔹️ Strengths </p>
+<p>- Communication Skills </p>
+<p>- Public Speaking </p>
+<p>- Leadership </p>
+<p>- Analytical Skills</p>
+<p>- Team Spirit</p>
   </p>
 </section>
 
@@ -471,6 +700,114 @@
     </div>
   </div>
 </section>
+
+<main>
+    <section id="photo" class="glass-panel">
+      <p style="font-size: 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+        Here are the photos related to my academics and subjects.
+      </p>
+      
+      <div id="demo" style="text-align:center; color:#04c5fa; margin-bottom: 10px; font-weight: 500;"></div>
+
+      <div class="gallery-grid">
+        <img src="july.jpeg" alt="Academic Photo July" onclick="openLightbox(this.src)">
+        <img src="nov.jpeg" alt="Academic Photo November" onclick="openLightbox(this.src)">
+        <img src="dec.jpeg" alt="Academic Photo December" onclick="openLightbox(this.src)">
+        <img src="jan.jpeg" alt="Academic Photo January" onclick="openLightbox(this.src)">
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Lightbox Markup -->
+  <div id="lightboxModal" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImg" src="" alt="Enlarged View">
+  </div>
+
+<main>
+    <section id="Video" class="glass-panel">
+      <h2>Videos</h2>
+      <p style="font-size: 1.2rem;">Here are the videos related to my academics and subjects.</p>
+      
+      <div id="demo" style="text-align:center; color:#04c5fa; margin-bottom: 15px; font-weight: 500;"></div>
+      
+      <div class="video-grid">
+        
+        <div class="video-wrapper">
+          <video src="C code 188.mp4" controls></video>
+          <div class="video-title">C Code Menu Driven Program</div>
+        </div>
+
+        <div class="video-wrapper">
+          <video src="Brand Rejuvenation Competition-Aryan's BizHub.mp4" controls></video>
+          <div class="video-title">Brand Rejuvenation Competition - Aryan's BizHub</div>
+        </div>
+
+        <div class="video-wrapper">
+          <video src="PyData Handling project.mp4" controls></video>
+          <div class="video-title">PyData Handling Project</div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <main>
+    <section id="certificates" class="glass-panel">
+      <div class="image-gallery">
+        <img src="c1.jpeg" alt="Certificate 1">
+        <img src="c2.jpeg" alt="Certificate 2">
+        <img src="c3.jpeg" alt="Certificate 3">
+        <img src="o1.jpeg" alt="Other Image 1">
+        <img src="o2.jpeg" alt="Other Image 2">
+        <img src="o3.jpeg" alt="Other Image 3">
+      </div>
+    </section>
+  </main>
+
+  <main>
+    <section id="social-media" class="glass-panel">
+      <h2>Social Profiles</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="a.png" alt="LinkedIn Profile">
+          <a href="https://www.linkedin.com/in/akshatnahar-jain-6b2a6a31a/" target="_blank" class="btn">LinkedIn</a>
+        </div>
+        <div class="card">
+          <img src="b.png" alt="Instagram Profile">
+          <a href="https://www.instagram.com/akshatnahar.in/" target="_blank" class="btn" style="background: #c20a75; color: white;">Instagram</a>
+        </div>
+        <div class="card">
+          <img src="c.png" alt="Threads Profile">
+          <a href="https://www.threads.com/@akshatnahar.in" target="_blank" class="btn" style="background: #292828; color: white;">Threads</a>
+        </div>
+        <div class="card">
+          <img src="d.png" alt="GitHub Repository">
+          <a href="https://github.com/akshatjain30100-creator/C-Language-Prgt" target="_blank" class="btn" style="background: #24292e; color: white;">GitHub</a>
+        </div>
+        <div class="card">
+          <img src="e.png" alt="X Profile">
+          <a href="https://x.com/AkshatJain81893" target="_blank" class="btn" style="background: #000000; color: white;">X / Twitter</a>
+        </div>
+        <div class="card">
+          <img src="f.png" alt="Facebook Profile">
+          <a href="https://www.facebook.com/profile.php?id=61576915678488" target="_blank" class="btn" style="background: #1877f2; color: white;">Facebook</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-wrapper glass-panel">
+      <h2>Our Location</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.24719602494!2d74.63287817542318!3d26.45746117692138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be71c1259038d%3A0x387b34445ffb8a32!2sMadar%20Gate!5e0!3m2!1sen!2sin!4v1716418000000!5m2!1sen!2sin"
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
 
 <section id="contact" class="glass-panel">
   <h2>Contact</h2>
