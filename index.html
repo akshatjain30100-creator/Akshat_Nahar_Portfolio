@@ -304,31 +304,40 @@
       text-decoration: underline;
     }
 
-        /* Base Styles & Grid */
-.glass-panel {
-  padding: 20px;
+        /* Container & Glass Panel */
+#photo.glass-panel {
+  padding: 30px 24px;
+  margin: 20px auto;
+  max-width: 1200px;
   text-align: center;
 }
 
-.gallery-grid {
-  display: grid;
-  /* Desktop Layout: Creates side-by-side columns that adjust automatically */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  align-items: start; /* Keeps image heights independent */
+#photo p {
+  margin-top: 0;
+  margin-bottom: 24px;
+  line-height: 1.5;
 }
 
-/* Photo Styling - Shows 100% full image without cropping */
+/* Gallery Grid Layout */
+.gallery-grid {
+  display: grid;
+  /* Desktop Layout: Side-by-side columns */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Perfect Square Photo Styling */
 .gallery-grid img {
   width: 100%;
-  height: auto; /* Maintains original aspect ratio so no parts are cut off */
+  aspect-ratio: 1 / 1; /* Sabhi photos ko exact square shape deta hai */
+  object-fit: cover;   /* Photo ko stretch kiye bina square ke andar perfectly crop/fit karta hai */
   display: block;
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover Effect for Desktop */
+/* Desktop Hover Effect */
 @media (hover: hover) {
   .gallery-grid img:hover {
     transform: translateY(-4px);
@@ -338,26 +347,21 @@
 
 /* Phone View (Screens under 600px) */
 @media (max-width: 600px) {
-  #photo {
-    padding: 15px 10px;
+  #photo.glass-panel {
+    padding: 20px 16px;
+    margin: 10px;
   }
 
   #photo p {
-    font-size: 1.1rem !important; /* Smaller text for mobile screens */
-    margin-bottom: 12px;
+    font-size: 1.1rem !important;
+    margin-bottom: 16px;
   }
 
   .gallery-grid {
-    grid-template-columns: 1fr; /* Stacks images in 1 column for phones */
+    grid-template-columns: 1fr; /* Mobile par single column square stack */
     gap: 16px;
   }
-
-  .gallery-grid img {
-    width: 100%;
-    height: auto; /* Full view retained on mobile */
-  }
 }
-
     /* Lightbox Modal System */
     .lightbox {
       display: none;
