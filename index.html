@@ -305,28 +305,49 @@
     }
 
         /* High-Visibility Expanded Gallery Grid */
-    .gallery-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Increased minimum block width from 320px to 400px */
-      gap: 30px; 
-      padding: 10px 0;
-    }
+    /* Base Gallery Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  align-items: center;
+}
 
-    .gallery-grid img {
-      width: 100%;
-      height: 480px; /* Bumped up height slightly to keep realistic photo aspect ratios with the wider space */
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      cursor: pointer;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-    }
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
     .gallery-grid img:hover {
       transform: scale(1.02) translateY(-4px);
       border-color: #04c5fa;
       box-shadow: 0 12px 24px rgba(4, 197, 250, 0.25);
     }
+    /* Mobile Alignment (Phones up to 600px) */
+@media (max-width: 600px) {
+  #photo {
+    padding: 15px 10px;
+    text-align: center; /* Centers paragraph text and elements */
+  }
+
+  #photo p {
+    font-size: 1.1rem !important; /* Scale text down so it fits nicely on small screens */
+    margin-bottom: 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Stacks images in a single column */
+    gap: 12px;
+  }
+
+  .gallery-grid img {
+    height: 200px; /* Adjust height for mobile aspect ratio */
+  }
+}
 
     /* Lightbox Modal System */
     .lightbox {
